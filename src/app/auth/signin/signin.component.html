@@ -1,0 +1,99 @@
+<div class="container">
+  <h1>Login To Your Account</h1>
+    <div class="row">
+      <ul>
+        <li>
+          <a routerLink="/signin" (click)="setLoginFlag()" class="btn btn-link">LOG IN</a>
+        </li>
+        <li>
+          <a routerLink="/signin" (click)="setSignupFlag()" class="btn btn-link">SIGN UP</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-xs-12">
+      <form [formGroup]="signinForm" (ngSubmit)="googleLogin()">
+            <div class="row" *ngIf="!signupFlag">
+                  <button type="button" *ngIf="!(user | async)?.uid">Login with Google</button>
+              <p>or</p>
+                  <div class="row">
+                    <div class="col-xs-12">
+                          <div class="form-group">
+                              <label for="username">Username:</label>
+                              <input type="text"
+                                     id="username"
+                                     alt="username"
+                                     name="username"
+                                     formControlName="username"
+                                     class="form-control">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-xs-12">
+                          <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="text"
+                                   id="password"
+                                   alt="password"
+                                   name="password"
+                                   formControlName="password"
+                                   class="form-control">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <button type="button"
+                              *ngIf="!(user | async)?.uid"
+                              [disabled]="!signinForm.valid">Login</button>
+                    </div>
+                  </div>
+              <!--<button (click)="emailLogin()" *ngIf="!(user | async)?.uid">Login with Email</button>
+              <button (click)="signup()" *ngIf="!(user | async)?.uid">New Member? Signup!</button>-->
+            </div>
+            <div class="row" *ngIf="!loginFlag">
+                <!--  <button (click)="googleSignup()" *ngIf="!(user | async)?.uid">Sign Up with Google</button>
+                  <p>or</p>-->
+                  <div class="row">
+                      <div class="col-xs-12">
+                          <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text"
+                                   id="username"
+                                   alt="username"
+                                   name="username"
+                                   formControlName="username"
+                                   class="form-control">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-xs-12">
+                          <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email"
+                                   id="email"
+                                   alt="email"
+                                   name="email"
+                                   formControlName="email"
+                                   class="form-control">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-xs-12">
+                          <div class="form-group">
+                              <label for="password">Password:</label>
+                              <input type="text"
+                                     id="password"
+                                     alt="password"
+                                     name="password"
+                                     formControlName="password"
+                                     class="form-control">
+                          </div>
+                      </div>
+                  </div>
+            </div>
+      </form>
+    </div>
+</div>

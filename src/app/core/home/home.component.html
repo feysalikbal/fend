@@ -1,0 +1,65 @@
+<h2>HOME MESSAGE!</h2>
+<br>
+<div class="container-fluid">
+    <div class="row box">
+      <div class="col-xs-12" *ngIf="!what; else forminfo">
+        <form [formGroup]="searchForm" (ngSubmit)="onSearch(searchForm.value)">
+            <div class="row">
+                <div class="cols col-xs-12">
+                  <div class="form-group">
+                    <label for="what">What</label>
+                    <input type="text"
+                           id="what"
+                           formControlName="what"
+                           class="form-control txtInput"
+                           value="Anything..."
+                           alt="Anything...">
+                  </div>
+                </div>
+            </div>
+      <br>
+            <div class="row">
+                <div class="cols col-xs-12">
+                  <div class="form-group">
+                    <label for="where">Where</label>
+                    <input type="text"
+                           id="where"
+                           formControlName="where"
+                           class="form-control txtInput"
+                           value="Anywhere..."
+                           alt="Anywhere...">
+                  </div>
+                </div>
+            </div>
+      <br>
+            <div class="row">
+                <div class="cols col-xs-12">
+                  <div class="form-group">
+                    <label for="when">When</label>
+                    <input type="datetime"
+                           id="when"
+                           formControlName="when"
+                           class="form-control txtInput"
+                           value="Anytime..."
+                           alt="Anytime...">
+                  </div>
+                </div>
+            </div>
+        <div class="cols col-xs-12">
+          <button class="btn btn-success"
+                  type="submit"
+                  [disabled]="!searchForm.valid">Search</button>
+        </div>
+      </form>
+      </div>
+      <ng-template #forminfo>
+          <div class="form-container">
+            <div class="row columns">
+                <h1>{{ what }}</h1>
+                <p>{{ where }}</p>
+                <p>{{ when }}</p>
+            </div>
+          </div>
+      </ng-template>
+  </div>
+</div>

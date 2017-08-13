@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="row columns" *ngFor="let itemList of items; let i = index">
+      {{ itemList.name }}
+      {{ itemList.description }}
+      {{ itemList.imagePath }}
+      {{ itemList.availibility }}
+      {{ itemList.user.name }}
+    </div>
+  </div>
+</div>

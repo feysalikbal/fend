@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  }
+
+body {
+  font-family: 'Alfa Slab One', cursive;
+  background: linear-gradient(191deg, #018fbc, #00a98d);
+  cursor: pointer;
+  /*background: linear-gradient(177deg, #97ba1f, #2d974e);
+  background: linear-gradient(330deg, #ff6666 0%, #ff8c66 25%, #ffb366 50%, #ff8c66 75%, #ff6666 100%);*/
+}
+
+img, embed, object, video {
+  display:block;
+  max-width: 100%;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #FFFFFF;
+    border: 2px 2px 2px 2px;
+    color: #4CAF50;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+button {
+    background:#ffffff;
+    border-color: #00a98d;
+    color:#00a98d;
+    padding: 1.2em;
+    width:300px;
+    text-align:center;
+    font-size:1.3em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    cursor:pointer;
+}

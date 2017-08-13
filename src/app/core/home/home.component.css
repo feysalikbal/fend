@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.txtInput  {
+    background:#ffddef;
+    width: 100%;
+    border:none;
+    outline:none;
+    box-shadow:none;
+    font-size:1em;
+    font-weight:10;
+    margin-bottom: 1em;
+    padding:1.2em .7em;
+}
+
+.box {
+  width: 100%;
+}
+.cols{
+  border: 1px solid red;
+}
+.col-md-4 {
+  width: 33.333333%;
+}
+.form-container {
+    display:block;
+    width:90%;
+    padding:2em;
+    margin: 2em auto;
+    background:#fff;
+}
