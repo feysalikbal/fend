@@ -11,39 +11,21 @@ import { AuthService } from '../auth.service';
 })
 export class SigninComponent implements OnInit {
 
-  loginFlag: boolean = true;
-  signupFlag: boolean = false;
-
-  signinForm: NgForm;
-
   constructor(private authService: AuthService,
-              private router: Router) { }
+              private router: Router) {}
 
   ngOnInit() {
   }
 
-  setLoginFlag(){
-    this.signupFlag = false;
-    this.loginFlag = true;
+  onSubmit(form: NgForm){
+    const email = form.value.email;
+    const password = form.value.password;
+    this.authService.firebaseSignin(email, password);
   }
-
-  setSignupFlag(){
-    this.loginFlag = false;
-    this.signupFlag = true;
-  }
-
 
   googleLogin() {
     this.authService.loginWithGoogle();
     this.router.navigate(['/profile']);    //navigate to the user dashboard
-  }
-
-  emailLogin(){
-    //Display email and password field
-  }
-
-  signup(){
-    //new user form
   }
 
 }

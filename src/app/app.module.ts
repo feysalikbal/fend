@@ -21,6 +21,7 @@ import { ItemDetailComponent } from './items/item-detail/item-detail.component';
 
 import { AuthService } from './auth/auth.service';
 import { ProfileComponent } from './user/profile/profile.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyBXPwC0siyMWk8a06X63kp5EUXZwbrUv0M",
@@ -39,7 +40,8 @@ export const firebaseConfig = {
     ItemListComponent,
     ItemEditComponent,
     ItemDetailComponent,
-    ProfileComponent
+    ProfileComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
